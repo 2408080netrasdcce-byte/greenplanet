@@ -1,0 +1,44 @@
+<html>
+<body>
+    <h1>Green Planet</h1>
+    <h2>NGO's mission | Recent Activities | Contact Form </h2>
+    <h1 id="title">NGO's mission</h1>
+    <p id="text">Tree plantation drive</p>
+
+<button onclick="change()">Next Page</button>
+
+<script>
+    function change(){
+        document.getElementById("title").innerHTML="Recent Activities";
+        document.getElementById("text").innerHTML="Beach Cleaning Drive";
+        document.getElementById("title").innerHTML="Contact Form";
+    }
+
+    
+</script>
+
+
+<h2>Conatct Form</h2>
+
+<input id="n" placeholder="Name">
+<input id="e" placeholder="Email">
+<input id="c" placeholder="ContactNo">
+<button onclick="send()">Submit</button>
+
+<script>
+function send() {
+fetch("https://script.google.com/macros/s/AKfycbyQXs_ApeA6qOFZjxXCk-fSRXd2ILem7FYn8jfeSvcsI39eMlTNubPKM7Uf5SGLTRKm/exec", {
+method: "POST",
+body: new URLSearchParams({
+name: document.getElementById("n").value,
+email: document.getElementById("e").value,
+contactno: document.getElementById("c").value
+})
+});
+}
+</script>
+
+
+
+
+
